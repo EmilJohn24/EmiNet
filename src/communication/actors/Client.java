@@ -21,7 +21,6 @@ public interface Client extends Communicator {
         private ClientConnector() { }
 
         static Server connectToServerService(String host, int port, String serviceName) throws RemoteException, NotBoundException {
-//            UnicastRemoteObject.exportObject(this, 0);
             Registry registry = LocateRegistry.getRegistry(host, port);
             return (Server) registry.lookup(serviceName);
 
